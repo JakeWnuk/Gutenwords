@@ -5,12 +5,12 @@ Gutenwords
 ## What is it?
 **Gutenwords** is a Python tool created to scrape Project Gutenburg for unique words for cracking password hashes using the Natural Language Tool Kit (NLTK).
 
-Last updated the results contain 6,527,202 words and 899,257 collocations.
+Last updated the results contain 6,527,202 words, 899,257 collocations, and 15 languages.
 
 ## How does it work?
 The script works by taking known URL patterns and enumerating them for unique books and texts from Project Gutenburg. The text is then filtered down by regex and split to be processed by NLTK. The tokens are broken up and tagged in a few different ways:
 
-- Words greater than 37 characters are removed from the results as they are assumed to be not practical for password cracking
+- Words greater than 36 characters are removed from the results as they are assumed to be not practical for password cracking
 - Before tokenizing the text, all non-ASCII chars, punctuation, numbers, and one character words are removed
 - Input text is automatically tagged for language
 - Stop words are removed based on the input language
@@ -36,3 +36,6 @@ The output is stored in the results folder. It consists of a few presorted resul
 
 ##### *After removing duplicates from the text so multiple usages in one text count as one
 ##### **Somewhat inaccurate as it is guessed based on surrounding text and is only recorded once
+
+## How can I use this for hash cracking?
+This is very useful when cracking hashes as you get a large language corpus in a single location for filtering and creating wordlists. It is very effective at targeting passphrases as well because of the part of speech tagging. For example, one could take a list of all the most popular English nouns and adjectives and quickly make a combinator wordlist or take all the french words and create passphrases in a V-ADJ-N form, then utilize the collocation database to create common phrase combinations. The corpus could also be mutated with 1337sp34k or other rules that can give a jumping point for specific applications or combined with keywords taken from target metadata to create new wordlists.
