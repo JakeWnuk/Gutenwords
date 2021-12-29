@@ -7,6 +7,8 @@ Gutenwords
 
 Last updated the results contain 6,527,202 words, 899,257 collocations, and 15 languages.
 
+![Image](../master/static/gutenwords_poc.png?raw=true)
+
 ## How does it work?
 The script works by taking known URL patterns and enumerating them for unique books and texts from Project Gutenburg. The text is then filtered down by regex and split to be processed by NLTK. The tokens are broken up and tagged in a few different ways:
 
