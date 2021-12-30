@@ -7,7 +7,42 @@ Gutenwords
 
 Last updated the results contain 6,527,202 words, 899,257 collocations, and 15 languages.
 
-![Image](../main/static/gutenwords_poc.png?raw=true)
+```
+$ python3 gutenwords.py
+
+LOADED 47301 SOURCES
+5395536 COLLOS | 26108804 WORDS
+
+ [1] <Response [200]> | https://www.gutenberg.org/cache/epub/1/pg1.txt
+Title:  The   Bill of Rights | Language: ENGLISH
+Words in source: 3152 | NEW WORDS: 0
+Records in collocations table: 899256 | Records in word table: 6527201
+ [2] <Response [200]> | https://www.gutenberg.org/cache/epub/2/pg2.txt
+Title:  The   Bill of Rights | Language: ENGLISH
+Words in source: 531 | NEW WORDS: 0
+Records in collocations table: 899256 | Records in word table: 6527201
+ [3] <Response [200]> | https://www.gutenberg.org/cache/epub/3/pg3.txt
+Title:  Kennedy Inaugural Address | Language: ENGLISH
+Words in source: 485 | NEW WORDS: 0
+Records in collocations table: 899256 | Records in word table: 6527201
+ [4] <Response [200]> | https://www.gutenberg.org/cache/epub/4/pg4.txt
+Title:  | Language: ENGLISH
+Words in source: 472 | NEW WORDS: 0
+Records in collocations table: 899274 | Records in word table: 6527201
+ [5] <Response [200]> | https://www.gutenberg.org/cache/epub/5/pg5.txt
+Title:  THE UNITED STATES  CONSTITUTION | Language: ENGLISH
+Words in source: 979 | NEW WORDS: 0
+Records in collocations table: 899274 | Records in word table: 6527201
+ [6] <Response [200]> | https://www.gutenberg.org/cache/epub/6/pg6.txt
+Title:  | Language: ENGLISH
+Words in source: 407 | NEW WORDS: 0
+Records in collocations table: 899288 | Records in word table: 6527201
+ [7] <Response [200]> | https://www.gutenberg.org/cache/epub/7/pg7.txt
+Title:  The Mayflower Compact | Language: ENGLISH
+Words in source: 509 | NEW WORDS: 0
+Records in collocations table: 899288 | Records in word table: 6527201
+
+```
 
 ## How does it work?
 The script works by taking known URL patterns and enumerating them for unique books and texts from Project Gutenburg. The text is then filtered down by regex and split to be processed by NLTK. The tokens are broken up and tagged in a few different ways:
